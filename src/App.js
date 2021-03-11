@@ -1,11 +1,9 @@
-import React from 'react'
-import Dashboard from "./Dashboard.js"
+import React from "react";
+import Dashboard from "./Dashboard.js";
+import ResponsiveDrawer from "./DashboardStatic.js";
 
 function App() {
-  return (
-
- <Dashboard/>
-  );
+  return <ResponsiveDrawer />;
 }
 
 export default App;

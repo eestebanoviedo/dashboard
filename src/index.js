@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
-import Dashboard from "./Dashboard.js"
+import App from "./App";
+import Dashboard from "./Dashboard.js";
+import ResponsiveDrawer from "./DashboardStatic.js";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Dashboard/>
+    <ResponsiveDrawer />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-
