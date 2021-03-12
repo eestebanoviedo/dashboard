@@ -20,7 +20,9 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
 import logo from "./foto.png";
-import negro from "./negro.png";
+// import negro from "./negro.png";
+
+import GmailTreeView from "./sidebar.js";
 
 import { mainListItems } from "./listItems";
 
@@ -73,6 +75,14 @@ const useStyles = makeStyles((theme) => ({
   backgroundColor: {
     background: "#C4C4C4",
   },
+  logo: {
+    height: "10vh",
+    // textAlign: "center",
+  },
+  divLogo: {
+    // height: "10vh",
+    textAlign: "center",
+  },
 }));
 
 function ResponsiveDrawer(props) {
@@ -104,39 +114,9 @@ function ResponsiveDrawer(props) {
       <CssBaseline />
       {/* NAV BAR */}
       <Grid item xs={false} sm={4} md={2}>
-        <nav className={classes.drawer} aria-label="mailbox folders">
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation="css">
-            <Drawer
-              container={container}
-              variant="temporary"
-              anchor={theme.direction === "rtl" ? "right" : "left"}
-              open={mobileOpen}
-              onClose={handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-          <Hidden xsDown implementation="css">
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              variant="permanent"
-              open
-            >
-              {drawer}
-            </Drawer>
-          </Hidden>
-        </nav>
+        <GmailTreeView />
       </Grid>
-      <Grid item xs={12} sm={8} md={9} square>
+      <Grid item xs={12} sm={8} md={10} square>
         {/* <AppBar className={classes.appBar}>
           <Toolbar>
             <IconButton
