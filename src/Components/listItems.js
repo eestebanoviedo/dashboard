@@ -2,13 +2,8 @@ import React from "react";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import DashboardIcon from "@material-ui/icons/Dashboard";
+
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import PeopleIcon from "@material-ui/icons/People";
-import BarChartIcon from "@material-ui/icons/BarChart";
-import LayersIcon from "@material-ui/icons/Layers";
-import AssignmentIcon from "@material-ui/icons/Assignment";
 
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import HomeIcon from "@material-ui/icons/Home";
@@ -18,58 +13,62 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 
-export const mainListItems = (
-  <div>
-    <ListItem button>
-      <ListItemIcon>
-        <HomeIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Inicio" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DriveEtaIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Vehiculos" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <EmojiTransportationIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Planta" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Ventas" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <SupervisorAccountIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Administracion" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AttachMoneyIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Contabilidad" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <SettingsIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="Configuracion" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <LocalShippingIcon style={{ fill: "#818181" }} />
-      </ListItemIcon>
-      <ListItemText primary="ECOSOFT" />
-    </ListItem>
-  </div>
-);
+const Listas = () => {
+  return (
+    <div>
+      <ListItem button>
+        <ListItemIcon>
+          <HomeIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Inicio" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <DriveEtaIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Vehiculos" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <EmojiTransportationIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Planta" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <ShoppingCartIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Ventas" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <SupervisorAccountIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Administracion" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <AttachMoneyIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Contabilidad" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <SettingsIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="Configuracion" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <LocalShippingIcon style={{ fill: "#818181" }} />
+        </ListItemIcon>
+        <ListItemText primary="ECOSOFT" />
+      </ListItem>
+    </div>
+  );
+};
+
+export default Listas;
 
 {
   /* <List>

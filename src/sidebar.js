@@ -126,13 +126,13 @@ StyledTreeItem.propTypes = {
 
 const useStyles = makeStyles({
   root: {
-    height: 264,
+    // height: 264,
     flexGrow: 1,
-    maxWidth: "100%",
+    width: "90%",
     background: "#C4C4C4",
     borderRadius: "20px",
     margin: "12px",
-    height: "100vh",
+    
   },
   colorTexto: {
     color: "red",
@@ -178,6 +178,8 @@ export default function GmailTreeView() {
           nodeId="3"
           labelText="Planta"
           labelIcon={EmojiTransportationIcon}
+          // color="#1a73e8"
+            bgColor="#019966"
         >
           <StyledTreeItem
             nodeId="4"

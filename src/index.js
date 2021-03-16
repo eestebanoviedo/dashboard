@@ -2,13 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
-import Dashboard from "./Dashboard.js";
-import ResponsiveDrawer from "./DashboardStatic.js";
+import Drawer from "./DashboardStatic";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <ResponsiveDrawer />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
