@@ -1,15 +1,23 @@
 import React from "react";
 import { makeStyles, Drawer } from "@material-ui/core";
 import Listas from "./listItems";
+import SideBar from "../sidebar.js";
 
 // const drawerWidth = 240;
 const useStyle = makeStyles((theme) => ({
   drawer: {
-    width: 240,
+    width: 239,
     flexShrink: 0,
   },
   drawerPaper: {
     width: 240,
+    // border: "1px solid red;",
+    // height: "80vh",
+    // top: "20px",
+    border: "none",
+    overflow: "hidden",
+    // borderRadius: "40px",
+    // borderRadius: "20px",
   },
   toolbar: theme.mixins.toolbar,
 }));
@@ -27,8 +35,8 @@ const Cajon = (props) => {
       }}
       anchor="left"
     >
-      <div className={classes.toolbar}></div>
-      <Listas />
+      {/* <div className={classes.toolbar}></div> */}
+      <SideBar />
     </Drawer>
   );
 };
