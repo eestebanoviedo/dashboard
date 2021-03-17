@@ -4,9 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import Typography from "@material-ui/core/Typography";
-import MailIcon from "@material-ui/icons/Mail";
-import DeleteIcon from "@material-ui/icons/Delete";
-import Label from "@material-ui/icons/Label";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import InfoIcon from "@material-ui/icons/Info";
 import ForumIcon from "@material-ui/icons/Forum";
@@ -22,7 +19,7 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SettingsIcon from "@material-ui/icons/Settings";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 
-import logo from "./foto.png";
+import logo from "../foto.png";
 
 const useTreeItemStyles = makeStyles((theme) => ({
   root: {
@@ -93,9 +90,6 @@ function StyledTreeItem(props) {
           <LabelIcon color="inherit" className={classes.labelIcon} />
           <Typography variant="body2" className={classes.labelText}>
             {labelText}
-          </Typography>
-          <Typography variant="caption" color="inherit">
-            {labelInfo}
           </Typography>
         </div>
       }
