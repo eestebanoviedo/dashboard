@@ -55,7 +55,7 @@ const useTreeItemStyles = makeStyles((theme) => ({
   selected: {},
   label: {
     fontWeight: "inherit",
-    color: "#414141",
+    color: "inherit",
   },
   labelRoot: {
     display: "flex",
@@ -64,7 +64,7 @@ const useTreeItemStyles = makeStyles((theme) => ({
   },
   labelIcon: {
     marginRight: theme.spacing(1),
-    color: "#818181",
+    // color: "#818181",
   },
   labelText: {
     fontWeight: "inherit",
@@ -127,9 +127,6 @@ const useStyles = makeStyles({
 
     paddingTop: "35px",
   },
-  colorTexto: {
-    color: "red",
-  },
   logo: {
     height: "10vh",
     // textAlign: "center",
@@ -159,27 +156,29 @@ export default function GmailTreeView() {
           nodeId="1"
           labelText="Inicio"
           labelIcon={HomeIcon}
+          color="#FFFFFF"
           bgColor="#019966"
         />
         <StyledTreeItem
           nodeId="2"
           labelText="Car"
           labelIcon={DriveEtaIcon}
+          color="#FFFFFF"
           bgColor="#019966"
         />
         <StyledTreeItem
           nodeId="3"
           labelText="Planta"
           labelIcon={EmojiTransportationIcon}
-          // color="#1a73e8"
+          color="#FFFFFF"
           bgColor="#019966"
         >
           <StyledTreeItem
             nodeId="4"
             labelText="Social"
             labelIcon={SupervisorAccountIcon}
-            // labelInfo="90"
-            color="#1a73e8"
+            color="#FFFFFF
+            "
             bgColor="#019966"
           />
           <StyledTreeItem
@@ -187,7 +186,7 @@ export default function GmailTreeView() {
             labelText="Updates"
             labelIcon={InfoIcon}
             // labelInfo="2,294"
-            color="#e3742f"
+            color="#FFFFFF"
             bgColor="#019966"
           />
           <StyledTreeItem
@@ -195,7 +194,7 @@ export default function GmailTreeView() {
             labelText="Forums"
             labelIcon={ForumIcon}
             // labelInfo="3,566"
-            color="#a250f5"
+            color="#FFFFFF"
             bgColor="#019966"
           />
           <StyledTreeItem
@@ -203,7 +202,7 @@ export default function GmailTreeView() {
             labelText="Promotions"
             labelIcon={LocalOfferIcon}
             // labelInfo="733"
-            color="#3c8039"
+            color="#FFFFFF"
             bgColor="#019966"
           />
         </StyledTreeItem>
@@ -212,24 +211,28 @@ export default function GmailTreeView() {
           labelText="Ventas"
           labelIcon={ShoppingCartIcon}
           bgColor="#019966"
+          color="#FFFFFF"
         />
         <StyledTreeItem
           nodeId="9"
           labelText="Administracion"
           labelIcon={AttachMoneyIcon}
           bgColor="#019966"
+          color="#FFFFFF"
         />
         <StyledTreeItem
           nodeId="10"
           labelText="Configuracion"
           labelIcon={SettingsIcon}
           bgColor="#019966"
+          color="#FFFFFF"
         />
         <StyledTreeItem
           nodeId="11"
           labelText="ECOSOFT"
           labelIcon={LocalShippingIcon}
           bgColor="#019966"
+          color="#FFFFFF"
         />
       </TreeView>
     </div>

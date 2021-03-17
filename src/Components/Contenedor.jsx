@@ -2,7 +2,7 @@ import React from "react";
 
 import { Hidden, makeStyles } from "@material-ui/core";
 import NavBar from "./NavBar";
-import Cajon from "./Cajon";
+import Cajon from "./CajonSideBar";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +37,10 @@ const Contenedor = () => {
   };
   return (
     <div className={classes.root}>
+      {/* <Hidden smUp> */}
       <NavBar accionAbrir={accionAbrir} />
+      {/* </Hidden> */}
+
       <Hidden xsDown>
         <Cajon variant="permanent" open={true} />
       </Hidden>
