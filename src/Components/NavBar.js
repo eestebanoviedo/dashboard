@@ -39,7 +39,7 @@ const NavBar = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          Esteban
+          ECO
         </Typography>
         <Button variant="text" color="default">
           LOGIN
