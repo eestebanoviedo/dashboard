@@ -16,11 +16,20 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = makeStyles((theme) => ({
+  appBar: {
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100% - ${240}px)`,
+      marginLeft: 240,
+    },
+  },
   grow: {
     flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   title: {
     display: "none",
@@ -79,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -131,6 +140,7 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {/* ICONOS LADO DERECHO */}
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
@@ -158,18 +168,19 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      {/* ///// */}
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="menu"
+            className={classes.menuButton}
+            onClick={() => props.accionAbrir()}
           >
             <MenuIcon />
           </IconButton>

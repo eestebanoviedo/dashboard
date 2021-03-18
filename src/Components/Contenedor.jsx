@@ -2,6 +2,7 @@ import React from "react";
 
 import { Hidden, makeStyles } from "@material-ui/core";
 import NavBar from "./NavBar";
+import NavBarSearch from "./NavBarSearch";
 import Cajon from "./CajonSideBar";
 
 const drawerWidth = 240;
@@ -33,6 +34,8 @@ const Contenedor = () => {
   const classes = useStyles();
   const [abrir, setAbrir] = React.useState(false);
   const accionAbrir = () => {
+    // SetAbrir va a pasar a lo distino de Abrir
+    //Si el segundo hidden esta en falso al abrir pasa a verdadero
     setAbrir(!abrir);
   };
   return (
@@ -44,7 +47,9 @@ const Contenedor = () => {
       <Hidden xsDown>
         <Cajon variant="permanent" open={true} />
       </Hidden>
+      {/* Hidden del boton izquierdo */}
       <Hidden smUp>
+        {/* funcion onClose pasa a traves de props a su cajonSideBar */}
         <Cajon variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden>
       <div className={classes.content}>
