@@ -3,6 +3,9 @@ import React from "react";
 import { Hidden, makeStyles } from "@material-ui/core";
 import NavBar from "./NavBar";
 import Cajon from "./Cajon";
+import Navegation   from './Navegation';
+import { black } from "material-ui/styles/colors";
+import Nav1 from './nav1'
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -10,23 +13,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
   },
   appBar: {
+    border: "4px solid black",
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
+    [theme.breakpoints.up("sm")]: {
+      width: `calc(100% - ${240}px)`,
+    },
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
-  },
 }));
 
 const Contenedor = () => {
@@ -37,17 +30,15 @@ const Contenedor = () => {
   };
   return (
     <div className={classes.root}>
-      <NavBar accionAbrir={accionAbrir} />
-      <Hidden xsDown>
+
+        {/* <Navegation className={classes.appBar}/> */}
+        <Navegation/>
+      {/* <Hidden xsDown>
         <Cajon variant="permanent" open={true} />
       </Hidden>
       <Hidden smUp>
         <Cajon variant="temporary" open={abrir} onClose={accionAbrir} />
-      </Hidden>
-      <div className={classes.content}>
-        <div className={classes.toolbar}></div>
-        Contenido
-      </div>
+      </Hidden> */}
     </div>
   );
 };

@@ -38,12 +38,7 @@ const NavBar = (props) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          Esteban
-        </Typography>
-        <Button variant="text" color="default">
-          LOGIN
-        </Button>
+        
       </Toolbar>
     </AppBar>
   );
