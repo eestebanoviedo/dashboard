@@ -32,7 +32,7 @@ const useTreeItemStyles = makeStyles((theme) => ({
       color: "var(--tree-view-color)",
     },
     "&:focus > $content $label, &:hover > $content $label, &$selected > $content $label": {
-      backgroundColor: "transparent",
+      backgroundColor: "#3D996050",
     },
   },
   content: {
@@ -144,7 +144,6 @@ export default function GmailTreeView() {
     <div>
       <TreeView
         className={classes.root}
-        defaultExpanded={["3"]}
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowRightIcon />}
         defaultEndIcon={<div style={{ width: 24 }} />}
