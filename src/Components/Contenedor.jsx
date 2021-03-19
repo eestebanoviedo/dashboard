@@ -1,11 +1,10 @@
 import React from "react";
 
 import { Hidden, makeStyles } from "@material-ui/core";
-import NavBar from "./NavBar";
 import Cajon from "./Cajon";
 import Navegation   from './Navegation';
 import { black } from "material-ui/styles/colors";
-import Nav1 from './nav1'
+import DrawerBox from './Drawer';
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -19,11 +18,17 @@ const useStyles = makeStyles((theme) => ({
       width: `calc(100% - ${240}px)`,
     },
   },
+  drawerBox:{
+    maxWidth: drawerWidth,
+    flexShrink: 0,
+
+  }
   // necessary for content to be below app bar
 }));
 
 const Contenedor = () => {
   const classes = useStyles();
+  
   const [abrir, setAbrir] = React.useState(false);
   const accionAbrir = () => {
     setAbrir(!abrir);
@@ -33,10 +38,16 @@ const Contenedor = () => {
 
         {/* <Navegation className={classes.appBar}/> */}
         <Navegation/>
+        <Hidden>
+        <DrawerBox variant="permanent" open={false} anchor="right" />
+        </Hidden>
+        <Hidden smUp>
+        <DrawerBox variant="temporary" open={abrir} onClose={accionAbrir}  anchor="right"/>
+        </Hidden>
       {/* <Hidden xsDown>
         <Cajon variant="permanent" open={true} />
       </Hidden>
-      <Hidden smUp>
+      <Hidden>
         <Cajon variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden> */}
     </div>

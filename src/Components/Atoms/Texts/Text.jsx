@@ -11,7 +11,7 @@ import {Typography} from '@material-ui/core';
 const Text =(props)=>{
 
     return(
-        <Typography variant="body1" align="center">
+        <Typography {...props} variant="body1" align="center">
           {props.txt}
       </Typography>
     )

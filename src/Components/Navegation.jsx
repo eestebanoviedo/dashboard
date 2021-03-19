@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     margin:0,    
     flexGrow: 1,
   },
+  grow2: {
+    backgroundColor: "3E984C",
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -50,13 +53,15 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: "#fff",
   },
   inputRoot: {
     color: 'inherit',
+
     width: "100%",
   },
   inputInput: {   
- 
+    color: "#fff",
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
@@ -68,7 +73,8 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionDesktop: {
     display: 'none',
-    border: "1px solid black ",
+    color: "#fff", 
+    backgroundColor: "#3E984C",
     borderRadius: "50px",
     width: "150px",
     alignItems: "center",
@@ -86,14 +92,11 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     width: "100%",
   },
-  styleIcons:{
-    color: "#fff",
-    backgroundColor: "white",
-  },
+
 
 }));
 
-const  Navegation = ()=> {
+const  Navegation = (props)=> {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -175,9 +178,9 @@ const  Navegation = ()=> {
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
-            </div >
+            </div>
             <InputBase
-              placeholder="Buscar.."
+            placeholder="Buscar.."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -186,7 +189,7 @@ const  Navegation = ()=> {
             />
           </div>
           <div className={classes.grow2}/>
-          <div className={classes.sectionDesktop}>
+          <div className={classes.sectionDesktop} >
             <IconButton aria-label="show 17 new notifications" color="inherit" >
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
@@ -198,9 +201,9 @@ const  Navegation = ()=> {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              color="inherit" 
             >
-              <AccountCircle/>
+              <AccountCircle  onClick={() => props.accionAbrir()} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
