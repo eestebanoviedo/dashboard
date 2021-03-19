@@ -1,8 +1,10 @@
 import React from "react";
 
 import { Hidden, makeStyles } from "@material-ui/core";
-import NavBar from "./NavBar";
+// import NavBar from "./NavBar";
 import NavBarSearch from "./NavBarSearch";
+import Navegation from "./Navegation.jsx";
+
 import Cajon from "./CajonSideBar";
 
 const drawerWidth = 240;
@@ -41,7 +43,7 @@ const Contenedor = () => {
   return (
     <div className={classes.root}>
       {/* <Hidden smUp> */}
-      <NavBar accionAbrir={accionAbrir} />
+      <Navegation accionAbrir={accionAbrir} />
       {/* </Hidden> */}
 
       <Hidden xsDown>

@@ -124,7 +124,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
     width: "100%",
     background: "#C4C4C4",
-
+    borderRadius: "15px",
     paddingTop: "35px",
   },
   logo: {
@@ -160,7 +160,7 @@ export default function GmailTreeView() {
         />
         <StyledTreeItem
           nodeId="2"
-          labelText="Car"
+          labelText="Auto"
           labelIcon={DriveEtaIcon}
           color="#FFFFFF"
           bgColor="#019966"
@@ -174,7 +174,7 @@ export default function GmailTreeView() {
         >
           <StyledTreeItem
             nodeId="4"
-            labelText="Social"
+            labelText="Buscador de vehiculos"
             labelIcon={SupervisorAccountIcon}
             color="#FFFFFF
             "
@@ -182,7 +182,7 @@ export default function GmailTreeView() {
           />
           <StyledTreeItem
             nodeId="5"
-            labelText="Updates"
+            labelText="Buscador de obleas"
             labelIcon={InfoIcon}
             // labelInfo="2,294"
             color="#FFFFFF"
@@ -190,7 +190,7 @@ export default function GmailTreeView() {
           />
           <StyledTreeItem
             nodeId="6"
-            labelText="Forums"
+            labelText="Control de envios"
             labelIcon={ForumIcon}
             // labelInfo="3,566"
             color="#FFFFFF"

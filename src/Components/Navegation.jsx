@@ -11,18 +11,22 @@ import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+// import "./styles.css";
+import { white } from "material-ui/styles/colors";
+import { black } from "material-ui/styles/colors";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    backgroundColor: "transparent",
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${240}px)`,
       marginLeft: 240,
     },
   },
   grow: {
+    // margin: 0,
     flexGrow: 1,
   },
   menuButton: {
@@ -31,25 +35,21 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
+
   search: {
+    borderRadius: "15px",
+    width: "100%",
     position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade("#3D9960", 0.75),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade("#4FA36C", 0.5),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       marginLeft: theme.spacing(3),
-      width: "auto",
+      width: "100%",
     },
   },
   searchIcon: {
@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   inputRoot: {
     color: "inherit",
+    width: "100%",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -72,12 +73,21 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     [theme.breakpoints.up("md")]: {
       width: "20ch",
+      width: "100%",
     },
   },
   sectionDesktop: {
     display: "none",
+    border: "1px ",
+    borderRadius: "15px",
+    width: "140px",
+    height: "36px",
+    alignItems: "center",
+    color: "#fff",
+    backgroundColor: fade("#3D9960", 0.7),
     [theme.breakpoints.up("md")]: {
       display: "flex",
+      color: "#fff",
     },
   },
   sectionMobile: {
@@ -86,9 +96,14 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+
+  styleIcons: {
+    color: "#fff",
+    backgroundColor: "white",
+  },
 }));
 
-export default function PrimarySearchAppBar(props) {
+const Navegation = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -140,18 +155,9 @@ export default function PrimarySearchAppBar(props) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {/* ICONOS LADO DERECHO */}
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
+      <MenuItem className={classes.navRight}>
         <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+          <Badge badgeContent={11} color="primary">
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -168,31 +174,27 @@ export default function PrimarySearchAppBar(props) {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-      {/* ///// */}
     </Menu>
   );
 
   return (
     <div>
-      <AppBar className={classes.appBar}>
+      <AppBar className={classes.appBar} elevation={0}>
         <Toolbar className={classes.grow}>
           <IconButton
-            color="inherit"
+            color="black"
             aria-label="menu"
             className={classes.menuButton}
             onClick={() => props.accionAbrir()}
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Buscar vehículos, recibos, comprobantes, puntos del sistema..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -200,13 +202,8 @@ export default function PrimarySearchAppBar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className={classes.grow} />
+          {/* <div className={classes.grow2} /> */}
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
@@ -231,7 +228,7 @@ export default function PrimarySearchAppBar(props) {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MoreIcon style={{ color: black }} />
             </IconButton>
           </div>
         </Toolbar>
@@ -240,4 +237,6 @@ export default function PrimarySearchAppBar(props) {
       {renderMenu}
     </div>
   );
-}
+};
+
+export default Navegation;

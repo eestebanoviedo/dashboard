@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, Drawer } from "@material-ui/core";
-import SideBar from "./SideBar.js";
+import SideBar from "./Sidebar.js";
 
 // const drawerWidth = 240;
 const useStyle = makeStyles((theme) => ({
