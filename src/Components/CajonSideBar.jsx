@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, Drawer } from "@material-ui/core";
 import SideBar from "./Sidebar.js";
+import ListItem from "./ListItem.js";
 
 // const drawerWidth = 240;
 const useStyle = makeStyles((theme) => ({
@@ -35,7 +36,7 @@ const Cajon = (props) => {
       anchor="left"
     >
       {/* <div className={classes.toolbar}></div> */}
-      <SideBar />
+      <ListItem />
     </Drawer>
   );
 };

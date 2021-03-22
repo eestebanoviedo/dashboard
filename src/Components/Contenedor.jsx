@@ -54,6 +54,7 @@ const Contenedor = () => {
         {/* funcion onClose pasa a traves de props a su cajonSideBar */}
         <Cajon variant="temporary" open={abrir} onClose={accionAbrir} />
       </Hidden>
+
       <div className={classes.content}>
         <div className={classes.toolbar}></div>
         Contenido

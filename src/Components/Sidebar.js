@@ -196,14 +196,6 @@ export default function GmailTreeView() {
             color="#FFFFFF"
             bgColor="#019966"
           />
-          <StyledTreeItem
-            nodeId="7"
-            labelText="Promotions"
-            labelIcon={LocalOfferIcon}
-            // labelInfo="733"
-            color="#FFFFFF"
-            bgColor="#019966"
-          />
         </StyledTreeItem>
         <StyledTreeItem
           nodeId="8"
