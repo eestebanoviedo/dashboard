@@ -2,8 +2,10 @@ import React from "react";
 
 import { Hidden, makeStyles } from "@material-ui/core";
 // import NavBar from "./NavBar";
-import NavBarSearch from "./NavBarSearch";
+// import NavBarSearch from "./NavBarSearch";
 import Navegation from "./Navegation.jsx";
+
+// import DrawerRightMio from "./DrawerRightMio";
 
 import Cajon from "./CajonSideBar";
 
@@ -43,7 +45,11 @@ const Contenedor = () => {
   return (
     <div className={classes.root}>
       {/* <Hidden smUp> */}
-      <Navegation accionAbrir={accionAbrir} />
+      <Navegation
+        accionAbrir={accionAbrir}
+        onClick={accionAbrir}
+        onClose={accionAbrir}
+      />
       {/* </Hidden> */}
 
       <Hidden xsDown>
@@ -58,6 +64,7 @@ const Contenedor = () => {
       <div className={classes.content}>
         <div className={classes.toolbar}></div>
         Contenido
+        {/* <DrawerRightMio /> */}
       </div>
     </div>
   );

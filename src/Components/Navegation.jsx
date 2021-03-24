@@ -17,6 +17,20 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import { white } from "material-ui/styles/colors";
 import { black } from "material-ui/styles/colors";
 
+import clsx from "clsx";
+import Drawer from "@material-ui/core/Drawer";
+import Button from "@material-ui/core/Button";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import InboxIcon from "@material-ui/icons/MoveToInbox";
+import MailIcon from "@material-ui/icons/Mail";
+
+import DrawerBox from "./Drawer";
+import DrawerRightMio from "./DrawerRightMio";
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     backgroundColor: "transparent",
@@ -101,12 +115,21 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     backgroundColor: "white",
   },
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: "auto",
+  },
 }));
 
 const Navegation = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [state, setState] = React.useState({
+    right: false,
+  });
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -127,7 +150,22 @@ const Navegation = (props) => {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  //BOTON PROFILE//
+  const toggleDrawer = (anchor, open) => (event) => {
+    setState({ ...state, [anchor]: open });
+  };
 
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === "top" || anchor === "bottom",
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    ></div>
+  );
+  // BOTON PROFILE//
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -139,7 +177,20 @@ const Navegation = (props) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      {/* <MenuItem> */}
+      <div>
+        {["right"].map((anchor) => (
+          <React.Fragment key={anchor}>
+            <MenuItem onClick={toggleDrawer(anchor, true)}>Profile</MenuItem>
+            <DrawerBox
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            ></DrawerBox>
+          </React.Fragment>
+        ))}
+      </div>
+      {/* </MenuItem> */}
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );

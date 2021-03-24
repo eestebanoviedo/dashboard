@@ -101,61 +101,65 @@ const DrawerBox = (props) => {
         aria-labelledby="form-dialog-title"
       >
         <form onSubmit={formik.handleSubmit}>
-          <FormControl>
+          <FormControl className={classes.formControl}>
             <DialogTitle className={classes.dialogTitte} id="form-dialog-title">
               Cambio de contraseña
             </DialogTitle>
             <DialogContent className={classes.dialogContent}>
-              <Input
-                className={classes.inputDialog}
-                autoFocus
-                id="password"
-                label="Nueva contraseña"
-                type="password"
-                fullWidth
-                color="secondary"
-                value={formik.values.password}
-                onChange={formik.handleChange}
-                error={
-                  formik.touched.password && Boolean(formik.errors.password)
-                }
-                helperText={formik.touched.password && formik.errors.password}
-              />
-              <Input
-                className={classes.inputDialog}
-                autoFocus
-                id="passwordConfirmation"
-                label="Confirme nueva contraseña"
-                type="password"
-                fullWidth
-                color="secondary"
-                value={formik.values.passwordConfirmation}
-                onChange={formik.handleChange}
-                error={
-                  formik.touched.passwordConfirmation &&
-                  Boolean(formik.errors.passwordConfirmation)
-                }
-                helperText={
-                  formik.touched.passwordConfirmation &&
-                  formik.errors.passwordConfirmation
-                }
-              />
+              <div>
+                <Input
+                  className={classes.inputDialog}
+                  autoFocus
+                  id="password"
+                  label="Nueva contraseña"
+                  type="password"
+                  fullWidth
+                  color="secondary"
+                  value={formik.values.password}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.password && Boolean(formik.errors.password)
+                  }
+                  helperText={formik.touched.password && formik.errors.password}
+                />
+                <Input
+                  className={classes.inputDialog}
+                  autoFocus
+                  id="passwordConfirmation"
+                  label="Confirme nueva contraseña"
+                  type="password"
+                  fullWidth
+                  color="secondary"
+                  value={formik.values.passwordConfirmation}
+                  onChange={formik.handleChange}
+                  error={
+                    formik.touched.passwordConfirmation &&
+                    Boolean(formik.errors.passwordConfirmation)
+                  }
+                  helperText={
+                    formik.touched.passwordConfirmation &&
+                    formik.errors.passwordConfirmation
+                  }
+                />
+              </div>
+              <DialogActions className={classes.dialogActions}>
+                <Btn
+                  onClick={handleClose}
+                  txt={"Cancelar"}
+                  className={classes.btnCansel}
+                  color="black"
+                />
+                <Btn
+                  onClick={handleClose}
+                  // color="red"
+                  variant="contained"
+                  txt={"Confirmar"}
+                  type={"submit"}
+                  className={classes.btnDialog}
+                  backgroundColor="red"
+                />
+              </DialogActions>
             </DialogContent>
-            <DialogActions className={classes.dialogActions}>
-              <Btn
-                onClick={handleClose}
-                txt={"Cancelar"}
-                className={(classes.btnDialog, classes.btnCansel)}
-              />
-              <Btn
-                onClick={handleClose}
-                color="secondary"
-                variant="contained"
-                txt={"Confirmar"}
-                type={"submit"}
-                className={classes.btnDialog}
-              />
-            </DialogActions>
           </FormControl>
         </form>
       </Dialog>
