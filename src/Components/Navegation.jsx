@@ -155,16 +155,6 @@ const Navegation = (props) => {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === "top" || anchor === "bottom",
-      })}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    ></div>
-  );
   // BOTON PROFILE//
   const menuId = "primary-search-account-menu";
   const renderMenu = (
